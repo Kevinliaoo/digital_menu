@@ -1,0 +1,48 @@
+@import '../../styles/global.scss';
+
+$footer-font-size: 1.5rem; 
+
+.footer {
+    @include display-column; 
+    align-content: flex-start;
+    background-color: $main-color;
+    width: 100vw;
+
+    &__logo {
+        width: 40%; 
+        height: 10vh;
+        padding: 0;
+    }
+}
+
+.restaurant-information {
+    @include display-column;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+
+    div {
+        margin-bottom: 1rem;
+        display: flex;
+        color: white;
+        font-size: $footer-font-size;
+
+        p {
+            margin-left: 1rem;
+        }
+    }
+}
+
+$footer-social-spacing: 1.5rem; 
+.social {
+    display: flex;
+    justify-content: flex-end;
+    position: relative; 
+    color: white; 
+    font-size: 2rem;
+    margin-bottom: $footer-social-spacing; 
+    margin-right: $footer-social-spacing;
+    
+    div {
+        width: $footer-social-spacing;
+    }
+}

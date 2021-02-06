@@ -1,0 +1,48 @@
+@import '../../styles/global.scss';
+
+.homepage {
+    overflow: scroll;
+    @include display-column;
+}
+
+.menuButton {
+    position: fixed;
+}
+
+.entryImg {
+    position: relative;
+    top: 0;
+    width: 100vw; 
+    height: 100vh;
+
+    &__image {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover; 
+        position: absolute; 
+        top: 0; 
+        filter: blur(3px);
+        z-index: -1;
+    }
+
+    &__logo {
+        width: 90%; 
+        height: 30%; 
+        color: white;
+        position: absolute; 
+        top: 30%; 
+        left: auto;
+    }
+}
+
+.menuContent {
+    @include display-column;
+    width: 100vw;
+
+    &__menu {
+        display: flex; 
+        justify-content: center;
+        margin-top: 3rem;
+        font-size: 4rem;
+    }
+}

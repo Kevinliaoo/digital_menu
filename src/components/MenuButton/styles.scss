@@ -1,0 +1,21 @@
+@import '../../styles/global.scss';
+@import '../../styles//animations.scss';
+
+.floatMenuBtn {
+    background-color: rgba(255, 255, 255, 0.6);
+    width: 5rem; 
+    height: 5rem;
+    border-radius: 10px;
+    box-shadow: $shadow;
+    position: sticky; 
+    top: 1rem;
+    left: 1rem;
+    animation-name: appear;
+    animation-duration: 1s;
+
+    .menuIcon {
+        width: 90%; 
+        height: 90%;
+        margin: auto;
+    }
+}

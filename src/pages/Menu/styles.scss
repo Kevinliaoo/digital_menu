@@ -1,0 +1,12 @@
+@import '../../styles/global.scss';
+
+.menu-content {
+    @include display-column;
+
+    h2 {
+        padding: 1rem 0 2rem 0;
+        text-align: center; 
+        font-size: 3rem;
+        background-color: $background_1;
+    }
+}

@@ -1,0 +1,14 @@
+@import '../../styles//global.scss';
+
+.header {
+    background-color: $main-color;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    height: 10vh; 
+    width: 100vw;
+
+    &__logo {
+        margin-bottom: 2rem;
+    }
+}

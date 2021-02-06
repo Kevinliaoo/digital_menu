@@ -1,0 +1,8 @@
+@import '../../styles/global.scss';
+
+.ListOfCategories {
+    @include display-column;
+    justify-content: space-evenly;
+    border: 2px solid black;
+    width: 100%; 
+}

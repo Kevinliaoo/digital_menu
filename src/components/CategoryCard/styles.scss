@@ -1,0 +1,41 @@
+@import '../../styles/global.scss';
+@import '../../styles/animations.scss';
+
+.categoryCard {
+    margin: 1rem auto;
+    width: 80vw;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    box-shadow: $shadow;
+
+    opacity: 0;
+    transform: translateY(10vh);
+    visibility: hidden;
+    transition: opacity 0.6s ease-out, transform 1.2s ease-out;
+    will-change: opacity, visibility;
+
+    img {
+        width: inherit;
+        height: inherit;
+        margin: auto; 
+        object-fit: cover; 
+        position: absolute; 
+        z-index: -1;
+        filter:brightness(0.7);
+    }
+    
+    p {
+        font-size: 3rem;
+        color: white;
+    }
+}
+
+.categoryCard.is-visible {
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+    z-index: -1;
+}

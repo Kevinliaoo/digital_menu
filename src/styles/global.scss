@@ -1,0 +1,24 @@
+// Variables
+$shadow: 0.3rem 0.3rem 1rem rgba(0, 0, 0, 0.3);
+$main-color: rgb(219, 37, 37);
+$background_1: #faf0e6; 
+$background_2: #eed9c4;
+
+// Functions
+
+// Mixins
+@mixin display-column {
+    display: flex; 
+    flex-direction: column;
+}
+
+* {
+    padding: 0; 
+    margin: 0; 
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
