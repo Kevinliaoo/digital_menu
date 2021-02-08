@@ -10,13 +10,7 @@
     align-items: center;
     border: 2px solid black;
     box-shadow: $shadow;
-
-    opacity: 0;
-    transform: translateY(10vh);
-    visibility: hidden;
-    transition: opacity 0.6s ease-out, transform 1.2s ease-out;
-    will-change: opacity, visibility;
-
+    
     img {
         width: inherit;
         height: inherit;
@@ -31,11 +25,4 @@
         font-size: 3rem;
         color: white;
     }
-}
-
-.categoryCard.is-visible {
-    opacity: 1;
-    transform: none;
-    visibility: visible;
-    z-index: -1;
 }

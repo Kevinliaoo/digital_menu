@@ -1,6 +1,6 @@
-import React from 'react'; 
-
-import { useScrollAppear } from '../../hooks/useScrollAppear';
+import React, { useEffect } from 'react'; 
+import Aos from 'aos'; 
+import 'aos/dist/aos.css';
 
 import './styles.scss';
 
@@ -9,10 +9,19 @@ const DEFAULT_CAT = 'Lorem'
 
 export const CategoryCard = props => {
     const { src=DEFAULT_IMG, category=DEFAULT_CAT, onClick, appearHeight=500 } = props; 
-    const show = useScrollAppear(appearHeight)
+
+    useEffect(() => {
+        Aos.init({
+            duration: 500
+        });
+    }, [])
 
     return(
-        <div className={`categoryCard ${show ? 'is-visible' : ''}`} onClick={() => onClick(category)} >
+        <div 
+            className = 'categoryCard' 
+            data-aos="fade-up"
+            onClick={() => onClick(category)} 
+        >
             <img src={src} alt='Cover pic' />
             <p>{category}</p>
         </div>
