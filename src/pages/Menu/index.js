@@ -4,6 +4,7 @@ import { Header } from '../../components/Header';
 import { ListOfFoodCards } from '../../components/ListOfFoodCards';
 import { MenuButton } from '../../components/MenuButton'; 
 import { AddToOrderModal } from '../../components/AddToOrderModal';
+import { DoneModal } from '../../components/DoneModal';
 import { useScrollAppear } from '../../hooks/useScrollAppear';
 
 import './styles.scss';
@@ -31,6 +32,7 @@ export const Menu = props => {
         setModal(false);
     }
     const [modalData, setModalData] = useState({});
+    const [doneModal, setDoneModal] = useState(false);
 
     return(
         <div className="menu-content">
@@ -51,6 +53,11 @@ export const Menu = props => {
                 isOpen = {modal} 
                 onClose = {closeModal} 
                 modalData = {modalData}
+                openDoneModal = {setDoneModal}
+            />
+            <DoneModal 
+                isOpen = {doneModal}
+                closeModal = {setDoneModal}
             />
         </div>
     )

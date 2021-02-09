@@ -10,6 +10,7 @@ const DEFAULT_SRC = 'https://images.pexels.com/photos/5423258/pexels-photo-54232
 const DUMMY = [
     {
         key: 1,
+        _id: 1,
         name: 'Milanesa1', 
         price: 100,
         descr: 'Milanesa de ternera', 
@@ -17,6 +18,7 @@ const DUMMY = [
     },
     {
         key: 2,
+        _id: 2,
         name: 'Milanesa2', 
         price: 100,
         descr: 'Milanesa de ternera', 
@@ -24,6 +26,7 @@ const DUMMY = [
     },
     {
         key: 3,
+        _id: 3,
         name: 'Milanesa3', 
         price: 100,
         descr: 'Milanesa de ternera', 
@@ -31,6 +34,7 @@ const DUMMY = [
     },
     {
         key: 4,
+        _id: 4,
         name: 'Milanes4', 
         price: 100,
         descr: 'Milanesa de ternera', 
@@ -38,6 +42,7 @@ const DUMMY = [
     },
     {
         key: 5,
+        _id: 5,
         name: 'Milanesa5', 
         price: 100,
         descr: 'Milanesa de ternera', 

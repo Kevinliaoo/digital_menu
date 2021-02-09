@@ -10,6 +10,15 @@
     }
 }
 
+@keyframes changeOpacity {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 $moveUpMotion: cubic-bezier(0.12, 1.19, 1, 0.99);
 
 @keyframes moveUp {

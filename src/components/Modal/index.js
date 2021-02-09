@@ -3,19 +3,22 @@ import ReactDOM from 'react-dom';
 
 import './styles.scss';
 
+const DEFAULT_AOS = 'zoom-in-up'; 
+
 export const Modal = props => {
-    const { isOpen, onClose } = props;
+    const { 
+        isOpen, 
+        aos = DEFAULT_AOS, 
+        color_palette = 'main-color', 
+    } = props;
 
     if(!isOpen) return null;
 
     return ReactDOM.createPortal(
         <div 
-            className='Modal' 
-            data-aos="zoom-in-up"
+            className={`Modal ${color_palette}`} 
+            data-aos={aos}
         >
-            <div classNam="Modal__container">
-                <button onClick={onClose} className="Modal__close-button">X</button>
-            </div>
             {props.children}
         </div>, 
         document.getElementById('modal')
