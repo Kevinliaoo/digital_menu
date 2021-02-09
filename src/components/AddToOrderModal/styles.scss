@@ -1,0 +1,74 @@
+@import '../../styles/global.scss';
+
+$ModalColor: white; 
+
+.modalAddContent {
+    @include display-column; 
+    justify-content: center;
+    align-items: center;
+    color: $ModalColor;
+    margin-top: 2rem;
+
+    &__name {
+        font-size: 2rem; 
+        font-weight: bold;
+    }
+    &__price {
+        font-size: 1.8rem;
+    }
+}
+
+
+$modalAddContentHeight: 4rem;
+$borderRadius: 1rem;
+$border: 1px solid black;
+@mixin plusMinusBtn {
+    color: $ModalColor; 
+    height: $modalAddContentHeight;
+    width: $modalAddContentHeight;
+    font-size: $modalAddContentHeight;
+    text-align: center;
+    border: $border;
+}
+@mixin centerDivContent {
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+.modalAddContent__buttons {
+    margin-top: 1.4rem;
+    height: $modalAddContentHeight;
+    display: flex; 
+    box-shadow: $shadow;
+
+    .minusButton {
+        @include plusMinusBtn;
+        background-color: rgb(235, 52, 52);
+        border-top-left-radius: $borderRadius;
+        border-bottom-left-radius: $borderRadius;
+        @include centerDivContent;
+    }
+
+    .quantity {
+        height: $modalAddContentHeight; 
+        width: $modalAddContentHeight * 3;
+        background-color: white;
+        border: $border;
+        color: black; 
+        font-size: 2rem;
+        @include centerDivContent;
+        
+        & > p {
+            margin: 0; 
+            padding: 0
+        }
+    }
+
+    .plusButton {
+        @include plusMinusBtn; 
+        background-color: rgb(0, 255, 0);
+        border-top-right-radius: $borderRadius;
+        border-bottom-right-radius: $borderRadius;
+        @include centerDivContent; 
+    }
+}

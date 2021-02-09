@@ -1,0 +1,33 @@
+@import '../../styles/global.scss';
+
+.Modal {
+    position: fixed;
+    width: 90vw; 
+    height: 40vh;
+    top: 30vh; 
+    left: 5vw;
+    margin: auto;
+    background-color: $secondary-color;
+    box-shadow: $shadow;
+  
+    @include display-column;
+    align-items: center;
+
+    &__container {
+        position: relative;
+        top: 10rem;
+        padding: 1rem;
+        width: 400px;
+    }
+
+    &__close-button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        border: 0;
+        padding: 0.5rem 1rem;
+        font-size: 2rem;
+        color: white; 
+        background-color: $secondary-color;
+    }
+}

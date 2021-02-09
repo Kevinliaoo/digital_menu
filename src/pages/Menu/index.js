@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react'; 
+import React, { useEffect, useState } from 'react'; 
 
 import { Header } from '../../components/Header';
 import { ListOfFoodCards } from '../../components/ListOfFoodCards';
 import { MenuButton } from '../../components/MenuButton'; 
+import { AddToOrderModal } from '../../components/AddToOrderModal';
 import { useScrollAppear } from '../../hooks/useScrollAppear';
 
 import './styles.scss';
@@ -22,6 +23,15 @@ export const Menu = props => {
         window.scrollTo(0, 0)
     }, []);
 
+    const [modal, setModal] = useState(false); 
+    const openModal = () => {
+        setModal(true);
+    }
+    const closeModal = () => {
+        setModal(false);
+    }
+    const [modalData, setModalData] = useState({});
+
     return(
         <div className="menu-content">
             {
@@ -32,7 +42,16 @@ export const Menu = props => {
                 <h2 className="home-title__title" >{category}</h2>
                 <img className="home-title__portrait" src={DEFAULT_IMG} alt="Portriat" />
             </div>
-            <ListOfFoodCards />
+            <ListOfFoodCards 
+                modal = {modal} 
+                openModal = {openModal} 
+                setModalData = {setModalData}
+            />
+            <AddToOrderModal 
+                isOpen = {modal} 
+                onClose = {closeModal} 
+                modalData = {modalData}
+            />
         </div>
     )
 }
