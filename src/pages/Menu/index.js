@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 
 import { Header } from '../../components/Header';
 import { ListOfFoodCards } from '../../components/ListOfFoodCards';
-import { MenuButton } from '../../components/MenuButton'; 
+import { MenuButton } from '../../components/MenuButton';
 import { AddToOrderModal } from '../../components/AddToOrderModal';
 import { DoneModal } from '../../components/DoneModal';
+import { useCallApi } from '../../hooks/useCallApi';
 import { useScrollAppear } from '../../hooks/useScrollAppear';
 
 import './styles.scss';
@@ -33,6 +34,12 @@ export const Menu = props => {
     }
     const [modalData, setModalData] = useState({});
     const [doneModal, setDoneModal] = useState(false);
+
+    const [loading, error, data] = useCallApi();
+
+    if(loading) {
+        return 'Loading page'
+    }
 
     return(
         <div className="menu-content">

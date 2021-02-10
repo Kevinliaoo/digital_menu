@@ -3,9 +3,10 @@ import React, { useEffect } from 'react';
 import { config } from '../../config';
 import { Logo } from '../../components/Logo';
 import { ListOfCategoriesCards } from '../../components/ListOfCategoriesCards';
+import { useCallApi } from '../../hooks/useCallApi';
 import { MenuButton } from '../../components/MenuButton';
 import { useScrollAppear } from '../../hooks/useScrollAppear';
- 
+
 import './styles.scss';
 import '../../styles/global.scss'
 
@@ -17,6 +18,12 @@ export const Home = props => {
         // Scroll to top of the page when reloading 
         window.scrollTo(0, 0)
     }, []);
+
+    const [loading, error, data] = useCallApi();
+
+    if(loading) {
+        return 'Loading page'
+    }
 
     return(
         <div className="homapage">

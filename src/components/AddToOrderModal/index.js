@@ -32,6 +32,7 @@ export const AddToOrderModal = props => {
             jsonData = {
                 order: [
                     {
+                        name: modalData.name,
                         product_id: modalData._id, 
                         quant: quant, 
                         unitPrice: modalData.price,
@@ -48,6 +49,7 @@ export const AddToOrderModal = props => {
                 )
             } else {
                 jsonData.order.push({
+                    name: modalData.name,
                     product_id: modalData._id, 
                     quant: quant, 
                     unitPrice: modalData.price,

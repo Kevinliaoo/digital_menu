@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react'; 
+import React, { useState } from 'react'; 
 import { AiOutlineBars } from 'react-icons/ai';
 import { ImCross } from 'react-icons/Im';
 
 import { Logo } from '../Logo';
-import { HorizontalLine } from '../HorizontalLine';
 
 import './styles.scss';
 
@@ -41,7 +40,7 @@ export const MenuButton = props => {
 
     const showMenuContent = () => {
         return(
-            <div className="navMenuContent">
+            <div className="navMenuContent" data-aos="fade-right">
                 <div className="navMenuContent__cross">
                     <ImCross onClick={deployMenu} />
                 </div>
@@ -49,20 +48,14 @@ export const MenuButton = props => {
                     <Logo className="navMenuContent__logo" />
                 </div>
                 <div className="navMenuContent__section">
-                    <ul>
-                        <li onClick={showAbout}>About us</li>
-                        <li onClick={goToHome}>Menu</li>
-                    </ul>
+                    <div className="navMenuContent__item" onClick={showAbout}>About us</div>
+                    <div className="navMenuContent__item" onClick={goToHome}>Menu</div>
                 </div>
                 <div className="navMenuContent__section">
-                    <ul>
-                        <li onClick={goToOrder}>My order</li>
-                    </ul>
+                    <div className="navMenuContent__item" onClick={goToOrder}>My order</div>
                 </div>
                 <div className="navMenuContent__section">
-                    <ul>
-                        <li>Log in</li>
-                    </ul>
+                    <div className="navMenuContent__item">Staff</div>
                 </div>
             </div>
         )
