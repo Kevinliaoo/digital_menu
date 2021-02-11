@@ -19,9 +19,10 @@ export const Home = props => {
         window.scrollTo(0, 0)
     }, []);
 
-    const API_URL = `${config.URLs.API_ENDPOINT}/api/categories`;
-    console.log('Llamando a la api')
+    const API_URL = `${config.URLs.API_URL}/api/categories`;
     const [loading, error, data] = useCallApi(API_URL);
+    let categories = [];
+    if(data) categories = data.data.body;
 
     if(loading) {
         return 'Loading page'
@@ -38,18 +39,8 @@ export const Home = props => {
             </div>
             <div className="menuContent">
                 <p className="menuContent__menu">Menu</p>
-                <ListOfCategoriesCards {...props} />
+                <ListOfCategoriesCards {...props} categories={categories} />
             </div>
         </div>
     )
 }
-
-
-
-/**
- * 
- *     const API_URL = `${config.URLs.API_ENDPOINT}/api/categories`; 
-    const {loading, error, data} = useCallApi(API_URL);
-    let CATEGORIES = [];
-    if(Object.keys(data).length !== 0) CATEGORIES = data.data.body;
- */

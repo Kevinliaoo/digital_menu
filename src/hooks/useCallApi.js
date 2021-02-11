@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 
 // Calls API (GET)
 export const useCallApi = apiUrl => {
-    const [data, setData] = useState({}); 
+    const [data, setData] = useState(null); 
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
@@ -18,23 +18,3 @@ export const useCallApi = apiUrl => {
                 setError(e);
             })
     }, [])
-
-    return {loading, error, data};
-}
-
-
-
-// import { useState } from 'react'; 
-
-// export const useCallApi = apiUrl => {
-//     const [loading, load] = useState(true); 
-
-//     setTimeout(() => {
-//         load(false);
-//     }, 1); 
-
-//     const error = null; 
-//     const data = {}; 
-
-//     return [loading, error, data];
-// }
