@@ -19,7 +19,9 @@ export const Home = props => {
         window.scrollTo(0, 0)
     }, []);
 
-    const [loading, error, data] = useCallApi();
+    const API_URL = `${config.URLs.API_ENDPOINT}/api/categories`;
+    console.log('Llamando a la api')
+    const [loading, error, data] = useCallApi(API_URL);
 
     if(loading) {
         return 'Loading page'

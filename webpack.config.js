@@ -11,7 +11,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'js/[name].js',
-        publicPath: '/',    // CDN de donde van a partir mis datos
+        publicPath: 'http://localhost:8080',    // CDN de donde van a partir mis datos
         chunkFilename: 'js/[id].[chunkhash].js'
     },
     module: {
@@ -63,20 +63,23 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin(),
         new webpack.DllReferencePlugin({
             // Archivo manifest que se crea dsps de correr npm run build:dll
-            manifest: require('./modules-manifest.json')
+            manifest: require('./modules-manifest.json'),
+            context: path.resolve(__dirname, "src") 
         })
     ], 
     devServer: {
-        historyApiFallback: true
+        contentBase: path.resolve(__dirname, 'dist'),
+        port: 8080,
+        historyApiFallback: true,
     },
     resolve: {
         extensions: ['.js', '.jsx']
     },
-    // optimization: {
-    //     splitChunks: {
-    //         chunks: 'all',
-    //         minSize: 0,
-    //         name: 'commons'
-    //     }
-    // }
+    optimization: {
+        splitChunks: {
+            chunks: 'all',
+            minSize: 0,
+            name: 'commons'
+        }
+    }
 }
