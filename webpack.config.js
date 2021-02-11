@@ -5,12 +5,14 @@ const webpack = require('webpack');
 
 module.exports = {
     entry: {
-        index: path.resolve(__dirname, 'src/index.js'),
+        app: path.resolve(__dirname, 'src/index.js'),
     },
+    mode: 'production',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].js',
-        publicPath: '/'
+        filename: 'js/[name].js',
+        publicPath: '/',    // CDN de donde van a partir mis datos
+        chunkFilename: 'js/[id].[chunkhash].js'
     },
     module: {
         rules: [
@@ -55,14 +57,26 @@ module.exports = {
             template: path.resolve(__dirname, 'src/index.html')
         }), 
         new MiniCssExtractPlugin({
-            filename: '[name].css'
+            filename: 'css/[name].css',
+            chunkFilename: '[id].css'
         }), 
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.DllReferencePlugin({
+            // Archivo manifest que se crea dsps de correr npm run build:dll
+            manifest: require('./modules-manifest.json')
+        })
     ], 
     devServer: {
         historyApiFallback: true
     },
     resolve: {
         extensions: ['.js', '.jsx']
-    }
+    },
+    // optimization: {
+    //     splitChunks: {
+    //         chunks: 'all',
+    //         minSize: 0,
+    //         name: 'commons'
+    //     }
+    // }
 }

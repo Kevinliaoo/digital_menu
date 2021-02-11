@@ -41,3 +41,13 @@ export const Home = props => {
         </div>
     )
 }
+
+
+
+/**
+ * 
+ *     const API_URL = `${config.URLs.API_ENDPOINT}/api/categories`; 
+    const {loading, error, data} = useCallApi(API_URL);
+    let CATEGORIES = [];
+    if(Object.keys(data).length !== 0) CATEGORIES = data.data.body;
+ */
