@@ -12,7 +12,7 @@ export const App = () => {
         <BrowserRouter>
             <Layout>
                 <Switch>
-                    <Route exact path='/jij' component={Home} />
+                    <Route exact path='/' component={Home} />
                     <Route exact path='/menu' component={Menu} />
                     <Route exact path="/order" component={Order} />
                     <Route component={NotFound} />

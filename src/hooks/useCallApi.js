@@ -17,4 +17,7 @@ export const useCallApi = apiUrl => {
                 setLoading(false); 
                 setError(e);
             })
-    }, [])
+    }, []);
+
+    return [loading, error, data];
+}
