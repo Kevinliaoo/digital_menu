@@ -33,12 +33,15 @@ export const Order = props => {
     const [confirmModal, showModal] = useState(false); 
     
     const handleClick = () => {
+        if(data.length === 0) return;
         showModal(true); 
     }
 
     useEffect(() => {
         window.scrollTo(0, 0)
     }, []);
+
+    console.log(data.length === 0)
 
     return(
         <div style={mainStyles}>
@@ -57,7 +60,12 @@ export const Order = props => {
                 Total: ${calculateTotal()}
             </div>
             <div className="order-button-container">
-                <div className="order-button" onClick={handleClick}>Order</div>
+                <div 
+                    className = {`order-button ${data.length===0 ? 'disabled' : 'enabled'}`} 
+                    onClick = {handleClick}
+                >
+                    Order
+                </div>
             </div>
             {
                 confirmModal 

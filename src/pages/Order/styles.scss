@@ -29,3 +29,8 @@
     border-radius: 1rem;
     box-shadow: $shadow;
 }
+
+.order-button.disabled {
+    background-color: rgba($ok-button-color, 0.7);
+    box-shadow: none;
+}

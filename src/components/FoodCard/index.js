@@ -9,7 +9,7 @@ export const FoodCard = props => {
         name, 
         price, 
         descr, 
-        src, 
+        img_url, 
         aos, 
         modal, 
         openModal,
@@ -23,7 +23,7 @@ export const FoodCard = props => {
 
     return(
         <div className="foodCard" data-aos={aos} >
-            <img src={src} alt='Food' />
+            <img src={img_url} alt='Food' />
             <p className="foodCard__foodName">{name}</p>
             <p className="foodCard__price">${price}</p>
             <p className="foodCard__descr">{descr}</p>
