@@ -1,5 +1,13 @@
 @import '../../styles/global.scss';
 
+.order-page {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background-color: $background_2;
+}
+
 .order-total {
     font-size: 2.5rem; 
     margin-top: 2rem;

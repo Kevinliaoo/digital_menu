@@ -24,12 +24,6 @@ export const Order = props => {
         return total;
     }
 
-    const mainStyles = {
-        'display': 'flex',
-        'flex-direction': 'column', 
-        'width': '100vw',
-    }
-
     const [confirmModal, showModal] = useState(false); 
     
     const handleClick = () => {
@@ -41,10 +35,8 @@ export const Order = props => {
         window.scrollTo(0, 0)
     }, []);
 
-    console.log(data.length === 0)
-
     return(
-        <div style={mainStyles}>
+        <div className="order-page">
             {
                 showFixed ? <MenuButton className="menuButton" {...props} /> : <div />
             }

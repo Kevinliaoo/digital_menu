@@ -38,6 +38,10 @@ export const MenuButton = props => {
         props.history.push('order')
     }
 
+    const goToStaff = () => {
+        props.history.push('staff');
+    }
+
     const showMenuContent = () => {
         return(
             <div className="navMenuContent" data-aos="fade-right">
@@ -55,7 +59,7 @@ export const MenuButton = props => {
                     <div className="navMenuContent__item" onClick={goToOrder}>My order</div>
                 </div>
                 <div className="navMenuContent__section">
-                    <div className="navMenuContent__item">Staff</div>
+                    <div className="navMenuContent__item" onClick={goToStaff}>Staff</div>
                 </div>
             </div>
         )
