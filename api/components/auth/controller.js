@@ -1,12 +1,15 @@
-import bcrypt from 'bcrypt';
-
-import { registerStore } from './store.js';
+import { comparePasswords, encryptPassword } from '../../utils/bcrypt.js';
+import { signJWT } from '../../utils/jwt.js';
+import { registerStore, getUser } from './store.js';
 
 export const login = (username, password) => {
-    return new Promise((resolve, reject) => {
-        console.log(username); 
-        console.log(password); 
-        resolve(username);
+    return new Promise(async (resolve, reject) => {
+        const user = await getUser(username); 
+        if(user === null) return reject('Access denied');
+        const samePsw = await comparePasswords(password, user.password);
+        if(!samePsw) return reject('Access denied');
+        const jwt = signJWT(user);
+        resolve({jwt, user});
     })
 }
 
@@ -19,15 +22,3 @@ export const register = (username, password, confirmPsw) => {
         else reject('Internal error');
     })
 }
-
-const encryptPassword = psw => {
-    return new Promise((resolve, reject) => {
-        bcrypt.hash(psw, 5, (error, hash) => {
-            if(error) {
-                reject('Error hashing the passowrd');
-                return false;  
-            }
-            resolve(hash); 
-        })
-    })
-}   

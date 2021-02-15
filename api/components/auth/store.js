@@ -9,3 +9,7 @@ export const registerStore = async data => {
         return null;
     }
 }
+
+export const getUser = async username => {
+    return await model.findOne({username}); 
+}
