@@ -77,7 +77,7 @@ export const AddToOrderModal = props => {
 
     return(
         <Modal isOpen = {isOpen} >
-            <div classNam="Modal__container">
+            <div className="Modal__container">
                 <button onClick={onClose} className="Modal__close-button">X</button>
             </div>
             <div className="modalAddContent">

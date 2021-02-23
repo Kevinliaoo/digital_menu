@@ -5,5 +5,6 @@ export const config = {
     }, 
     STORAGE_KEYS: {
         My_order: 'my_order',
+        JWT: 'JWT',
     }
 }

@@ -11,7 +11,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'js/[name].js',
-        publicPath: 'http://localhost:8080',    // CDN de donde van a partir mis datos
+        publicPath: './',    // CDN de donde van a partir mis datos
         chunkFilename: 'js/[id].[chunkhash].js'
     },
     module: {
@@ -71,6 +71,7 @@ module.exports = {
         contentBase: path.resolve(__dirname, 'dist'),
         port: 8080,
         historyApiFallback: true,
+        publicPath: '/',
     },
     resolve: {
         extensions: ['.js', '.jsx']

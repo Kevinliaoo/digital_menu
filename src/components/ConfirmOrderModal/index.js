@@ -22,7 +22,7 @@ export const ConfirmOrderModal = props => {
 
     return(
         <Modal isOpen = {isOpen} >
-            <div classNam="Modal__container">
+            <div className="Modal__container">
                 <button onClick={onClose} className="Modal__close-button">X</button>
             </div>
             <form className="orderform">

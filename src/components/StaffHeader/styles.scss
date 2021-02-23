@@ -1,0 +1,25 @@
+@import '../../styles/global.scss';
+
+.header-container {
+    height: 10vh; 
+    width: 100vw; 
+    background-color: $main-color;
+    display: flex; 
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.logout-icon {
+    font-size: 4rem;
+    margin: 1.5rem;
+    color: white;
+}
+
+.logout-text {
+    margin-left: 0.5rem;
+    font-size: 2rem;
+    color: white; 
+}
+.logout-text:hover {
+    text-decoration: underline;
+}

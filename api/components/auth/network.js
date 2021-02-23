@@ -20,8 +20,8 @@ router.post('/register', validationHandler(newUserSchema), (req, res) => {
         .catch(e => response.error(req, res, e));
 })
 
-router.get('/aa', checkAuth(), (req, res) => {
-    response.success(req, res, 'aaa');
+router.get('/checkAuth', checkAuth(), (req, res) => {
+    response.success(req, res, 'Authorized');
 })
 
 export default router; 

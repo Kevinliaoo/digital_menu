@@ -1,8 +1,12 @@
-import { useState } from 'react'; 
+import React, { useState } from 'react';
 
-export function useLocalStorage(key, initialValue) {
+export function useLocalStorage(key, initialState = '') {
 
-    const [ value, setValue ] = useState(initialValue); 
+    console.log('Entrando al hook sanamente')
+
+    const [value, setValue] = useState(initialState)
+
+    console.log('Se pudo hacer useState')
 
     const setLocalStorage = val => {
         try {
